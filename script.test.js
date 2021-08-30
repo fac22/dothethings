@@ -4,15 +4,20 @@
 
 test('user click on plus sign adds a new todo item to the page', () => {
   // simulate the click event
-  const button = document.getElementById('button');
+  const button = document.getElementById('add_item');
   button.click();
 
-  // verify that the template element contains the expected HTML
-  const result = document.querySelector('#card_template');
+  //verify that the element has been inserted into the DOM with a unique ID
+
+  const result = document.getElementById('some_id');
+  if (a) console.log('elem exists');
+  else console.log('elem does not exist');
+
+  // verify that the element contains the expected HTML
   equal(result.innerHTML, '');
 
-  // reset the page so it doesn't affect anything else
-  result.innerHTML = '';
+  // reset the container that holds the todo items
+  document.getElementById('#card_template').innerHTML = '';
 });
 
 test('user can update the text content of a todo item', () => {
@@ -24,7 +29,22 @@ test('user can update the text content of a todo item', () => {
   const result = document.querySelector('input');
   equal(result.textContent, 'do laundry');
 
+  // reset the page so it doesn't affect anything else
   result.textContent = '';
+});
+
+//testing for issue #3
+//1. Card successfully removed from the DOM when user presses plus delete (click event)
+
+test('user clicks on delete button and removes the todo item from the page', () => {
+  // simulate the click event
+  const button = document.getElementById('remove_item');
+  button.click();
+
+  //verify that the element has been removed from the DOM
+  const result = document.getElementById('some_id');
+  if (result) console.log('elem exists');
+  else console.log('elem does not exist');
 });
 
 //test helpers
