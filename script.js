@@ -5,17 +5,12 @@ function makeCard() {
 
   card.innerHTML = `
 
-  <div class="card">
-  <input type="text" id="${uniqueID}" name="text" placeholder="Enter task...">
-  <button type="button" id="delete-button" onclick="removeCard()">
-  <img class="icon" src="./delete.svg" /></button>
-  </div>`;
+    <div class="card">
+        <input type="text" id="${uniqueID}" name="text" placeholder="Enter task...">
+        
+        </div>
+        </div>`;
 
   container.append(card);
 }
 document.getElementById('add_item').addEventListener('click', makeCard);
-
-function removeCard() {
-  let deleteButton = document.getElementById('delete-button');
-  deleteButton.parentNode.remove();
-}
