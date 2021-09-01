@@ -7,7 +7,7 @@ function makeCard() {
 
   <div class="card">
   <input type="text" id="${uniqueID}" name="text" placeholder="Enter task...">
-  <button type="button" id="trash-button" onclick="removeCard()">
+  <button type="button" id="delete-button" onclick="removeCard()">
   <img class="icon" src="./delete.svg" /></button>
   </div>`;
   container.append(card);
