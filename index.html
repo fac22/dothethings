@@ -10,24 +10,25 @@
     <title>Do the Things</title>
   </head>
   <body>
-    <h1>Do the Things</h1>
-
+    <header>
+      <h1>Do the Things</h1>
+    </header>
     <img src="./undraw_completed_tasks_vs6q.svg" />
+    <form>
+      <input type="text" class="todo-input" />
+      <button class="todo-button" type="submit">
+        <img class="icon" src="./add.svg" />
+      </button>
+      <div class="select">
+        <select name="todos" class="filter-to-do">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
+    </form>
 
-    <main>
-      <div class="card">
-        <p>Add a to-do item</p>
-        <button id="add_item">
-          <img class="icon" src="./add.svg" />
-        </button>
-      </div>
-      <div id="item-list">
-        <!--<div class="card card__green">
-        <p>Item completed 🥳</p>
-        <img class="icon" src="./tick.svg" />
-      </div>-->
-      </div>
-    </main>
+    <ul class="todo-list"></ul>
   </body>
 </html>
 <script src="script.js"></script>
