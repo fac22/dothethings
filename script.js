@@ -6,6 +6,7 @@ const toDoList = document.querySelector('.todo-list');
 //Event listeners
 toDoButton.addEventListener('click', addToDo);
 toDoList.addEventListener('click', deleteToDo);
+toDoList.addEventListener('click', markCompleted);
 
 //Functions
 
@@ -27,6 +28,13 @@ function addToDo(e) {
   deleteButton.id = 'delete';
   toDoDiv.appendChild(deleteButton);
 
+  //complete button
+
+  const completedButton = document.createElement('button');
+  completedButton.innerHTML = '<img class="icon" src="./tick.svg" />';
+  completedButton.id = 'checked';
+  toDoDiv.appendChild(completedButton);
+
   toDoInput.value = '';
 
   toDoList.appendChild(toDoDiv);
@@ -36,5 +44,12 @@ function deleteToDo(e) {
   const item = e.target;
   if (item.id === 'delete') {
     item.parentNode.remove();
+  }
+}
+
+function markCompleted(e) {
+  const item = e.target;
+  if (item.id === 'checked') {
+    item.parentNode.childNodes[0].classList.add('item_checked');
   }
 }
