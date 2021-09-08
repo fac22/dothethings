@@ -1,3 +1,18 @@
+//testing for issue #4
+// this should be the first test in the file
+test('input element should be automatically focused on load', () => {
+  equal(document.querySelector('.todo-input'), document.activeElement);
+});
+
+test('submitting the form calls addToDo', () => {
+  const toDoInput = document.querySelector('.todo-input');
+  const toDoForm = document.querySelector('form');
+  toDoInput.focus();
+  toDoInput.value = 'this is a test';
+  toDoForm.submit();
+  equal(toDoInput.value, ''); // this meant that addToDo was called and it erased the value of toDoInput
+});
+
 //testing for issue #1
 //1. Card successfully inserted into DOM when user presses plus icon (click event)
 //3. User is able to set text content of card
