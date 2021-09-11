@@ -1,108 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  width: 80%;
-  margin: 0 auto;
-  color: #2f2e41;
+    font-family: 'Open Sans', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    color: #2f2e41;
 }
 
 img {
-  width: 100%;
+    width: 100%;
 }
 
 h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    margin: 3rem;
 }
 
 form {
-  margin-top: 2rem;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input[type='text'] {
-  width: 70%;
-  height: 1.5rem;
-  margin-right: 1rem;
-  border-radius: 0.3rem;
+    width: 70%;
+    height: 1.5rem;
+    margin-right: 1rem;
+    border-radius: 0.3rem;
 }
 
 .todo-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
 }
 .todo-item {
-  width: 80%;
-  border-radius: 0.6em;
-  border: 0.1rem solid rgba(255, 99, 102, 255);
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-  list-style-type: none;
+    width: 80%;
+    border-radius: 0.6em;
+    border: 0.1rem solid rgba(255, 99, 102, 255);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    list-style-type: none;
 }
 
 p {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 .icon {
-  height: 1.5rem;
-  width: 1.5rem;
-  pointer-events: none;
-  margin-left: 0.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    pointer-events: none;
+    margin-left: 0.5rem;
 }
 
 .item_checked {
-  border: 0.1rem solid rgba(116, 220, 84, 255);
-  text-decoration: line-through;
+    border: 0.1rem solid rgba(116, 220, 84, 255);
+    text-decoration: line-through;
 }
 /*removing default styles from button*/
 button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 @media only screen and (min-width: 600px) {
-  img {
-    width: 35%;
-    display: block;
-    margin: 0 auto;
-  }
+    img {
+        width: 35%;
+        display: block;
+        margin: 0 auto;
+    }
 
-  input[type='text'] {
-    width: 25%;
-  }
+    input[type='text'] {
+        width: 25%;
+    }
 
-  .todo-container {
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 1.5rem;
-  }
+    .todo-container {
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+    }
 
-  p {
-    font-size: 2.5rem;
-  }
+    p {
+        font-size: 2.5rem;
+    }
 
-  .icon {
-    height: 1.5rem;
-    width: 1.5rem;
-  }
+    .icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
 }
