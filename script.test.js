@@ -7,7 +7,6 @@ test('input element should be automatically focused on load', () => {
 test('submitting the form calls addToDo', () => {
   const toDoInput = document.querySelector('.todo-input');
   const toDoForm = document.querySelector('form');
-  toDoInput.focus();
   toDoInput.value = 'this is a test';
   toDoForm.submit();
   equal(toDoInput.value, ''); // this meant that addToDo was called and it erased the value of toDoInput

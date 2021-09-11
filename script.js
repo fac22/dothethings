@@ -10,6 +10,11 @@ toDoList.addEventListener('click', deleteToDo);
 toDoList.addEventListener('click', markCompleted);
 filter.addEventListener('change', filterToDos);
 
+//Focus on load
+document.addEventListener('DOMContentLoaded', (e) => {
+  toDoInput.focus();
+});
+
 //Functions
 
 function addToDo(e) {
@@ -26,6 +31,7 @@ function addToDo(e) {
 
   //delete button
   const deleteButton = document.createElement('button');
+  deleteButton.classList.add('focusable');
   deleteButton.innerHTML = '<img class="icon" src="./delete.svg" />';
   deleteButton.id = 'delete';
   toDoDiv.appendChild(deleteButton);
@@ -33,6 +39,7 @@ function addToDo(e) {
   //complete button
 
   const completedButton = document.createElement('button');
+  completedButton.classList.add('focusable');
   completedButton.innerHTML = '<img class="icon" src="./tick.svg" />';
   completedButton.id = 'checked';
   toDoDiv.appendChild(completedButton);

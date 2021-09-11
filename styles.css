@@ -80,6 +80,10 @@ button {
   outline: inherit;
 }
 
+.focusable:focus-visible {
+  outline: rgb(0, 95, 204) auto 1px;
+}
+
 @media only screen and (min-width: 600px) {
   img {
     width: 35%;
