@@ -21,25 +21,34 @@ function addToDo(e) {
 
   const newToDo = document.createElement('li');
   newToDo.innerText = toDoInput.value;
-  newToDo.classList.add('todo-item');
-  toDoDiv.appendChild(newToDo);
+  const warning = document.querySelector('.warning');
+  const form = document.querySelector('form');
+  if (newToDo.innerText === '') {
+    form.style.marginTop = '0';
+    return (warning.style.display = 'block');
+  } else {
+    warning.style.display = 'none';
+    form.style.marginTop = '1.5rem';
+    newToDo.classList.add('todo-item');
+    toDoDiv.appendChild(newToDo);
 
-  //delete button
-  const deleteButton = document.createElement('button');
-  deleteButton.innerHTML = '<img class="icon" src="./delete.svg" />';
-  deleteButton.id = 'delete';
-  toDoDiv.appendChild(deleteButton);
+    //delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = '<img class="icon" src="./delete.svg" />';
+    deleteButton.id = 'delete';
+    toDoDiv.appendChild(deleteButton);
 
-  //complete button
+    //complete button
 
-  const completedButton = document.createElement('button');
-  completedButton.innerHTML = '<img class="icon" src="./tick.svg" />';
-  completedButton.id = 'checked';
-  toDoDiv.appendChild(completedButton);
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML = '<img class="icon" src="./tick.svg" />';
+    completedButton.id = 'checked';
+    toDoDiv.appendChild(completedButton);
 
-  toDoInput.value = '';
+    toDoInput.value = '';
 
-  toDoList.appendChild(toDoDiv);
+    toDoList.appendChild(toDoDiv);
+  }
 }
 
 function deleteToDo(e) {

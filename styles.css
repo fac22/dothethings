@@ -9,13 +9,13 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  width: 80%;
-  margin: 0 auto;
   color: #2f2e41;
 }
 
 img {
-  width: 100%;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
 }
 
 h1 {
@@ -23,19 +23,33 @@ h1 {
   font-size: 2rem;
   margin: 3rem;
 }
-
+main {
+  width: 80%;
+  margin: 0 auto;
+}
 form {
-  margin-top: 2rem;
-  padding: 1rem;
+  margin-top: 1.5rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 input[type='text'] {
   width: 70%;
-  height: 1.5rem;
-  margin-right: 1rem;
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.warning {
+  display: none;
+  color: red;
+  font-size: smaller;
+  margin-top: 1rem;
+}
+
+.filter-to-do {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.3rem;
   border-radius: 0.3rem;
 }
 
@@ -45,6 +59,7 @@ input[type='text'] {
   align-items: center;
   margin-top: 1rem;
 }
+
 .todo-item {
   width: 80%;
   border-radius: 0.6em;
@@ -82,18 +97,21 @@ button {
 
 @media only screen and (min-width: 600px) {
   img {
-    width: 35%;
+    width: 25%;
     display: block;
     margin: 0 auto;
   }
 
-  input[type='text'] {
-    width: 25%;
+  main {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  form {
+    margin-top: 2rem;
   }
 
   .todo-container {
-    width: 40%;
-    margin: 0 auto;
     margin-top: 1.5rem;
   }
 
