@@ -19,8 +19,17 @@ function addToDo(e) {
     const toDoDiv = document.createElement('div');
     toDoDiv.classList.add('todo-container');
 
-    const newToDo = document.createElement('li');
-    newToDo.innerText = toDoInput.value;
+
+  const newToDo = document.createElement('li');
+  newToDo.innerText = toDoInput.value;
+  const warning = document.querySelector('.warning');
+  const form = document.querySelector('form');
+  if (newToDo.innerText === '') {
+    form.style.marginTop = '0';
+    return (warning.style.display = 'block');
+  } else {
+    warning.style.display = 'none';
+    form.style.marginTop = '1.5rem';
     newToDo.classList.add('todo-item');
     toDoDiv.appendChild(newToDo);
 
@@ -40,6 +49,8 @@ function addToDo(e) {
     toDoInput.value = '';
 
     toDoList.appendChild(toDoDiv);
+  }
+
 }
 
 function deleteToDo(e) {
