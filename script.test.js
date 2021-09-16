@@ -1,15 +1,16 @@
 //testing for issue #4
 // this should be the first test in the file
-test('input element should be automatically focused on load', () => {
-    equal(document.querySelector('.todo-input'), document.activeElement);
+document.addEventListener('DOMContentLoaded', (e) => {
+    test('input field should be automatically focused on page load', () => {
+        equal(document.querySelector('.todo-input'), document.activeElement);
+    });
 });
 
 test('submitting the form calls addToDo', () => {
     const toDoInput = document.querySelector('.todo-input');
     const toDoForm = document.querySelector('form');
-    toDoInput.focus();
     toDoInput.value = 'this is a test';
-    toDoForm.submit();
+    toDoForm.dispatchEvent(new Event('submit')); // https://stackoverflow.com/questions/2490825/how-to-trigger-event-in-javascript
     equal(toDoInput.value, ''); // this meant that addToDo was called and it erased the value of toDoInput
 });
 
@@ -53,19 +54,26 @@ test('user can update the text content of a todo item', () => {
 
 test('Checking an entry marks it as complete', () => {
     // get first item in the list. I'm assuming that all the entries in the list are not completed and that's why I'm picking the first item in the list.
-    const item = document.querySelector('#item-list .item:first-child');
+    const item = document.querySelector(
+        '.todo-list .todo-container:first-child'
+    );
 
     // verify that such an item exist. I belive it's important that we run the "user click on plus sign adds a new todo item to the page" test before this test.
     if (!item) {
-        console.log('elem does not exist');
+        console.log('Fail: elem does not exist');
     } else {
         // click on the element
-        item.click();
+        const completeButton = item.querySelector('button[type="complete"');
+        completeButton.click();
         // verify that the item has the class 'completed'
-        if (item.classList.contains('completed')) {
-            console.log('item successfully marked as completed');
+        if (
+            item
+                .querySelector('.todo-item')
+                .classList.contains('item-completed')
+        ) {
+            console.log('Pass: item successfully marked as completed');
         } else {
-            console.log("item wasn't marked as completed");
+            console.log("Fail: item wasn't marked as completed");
         }
     }
 });

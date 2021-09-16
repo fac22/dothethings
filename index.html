@@ -15,14 +15,14 @@
     <img src="./undraw_completed_tasks_vs6q.svg" />
     <main>
       <div class="warning">Please enter some text</div>
-      <form>
-        <input type="text" class="todo-input" />
-        <button class="todo-button" type="submit">
+      <form id="form-add-todo">
+        <input type="text" class="todo-input focusable" />
+        <button id="button-add-todo" class="todo-button focusable" type="submit">
           <img class="icon" src="./add.svg" />
         </button>
       </form>
       <div class="select">
-        <select name="todos" class="filter-to-do">
+        <select name="todos" class="filter-to-do focusable">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
@@ -33,4 +33,4 @@
     </main>
 </html>
 <script src="script.js"></script>
-<!--<script src="script.test.js"></script>-->
+<script src="script.test.js"></script>

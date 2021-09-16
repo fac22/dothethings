@@ -8,14 +8,14 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  color: #2f2e41;
+    font-family: 'Open Sans', sans-serif;
+    color: #2f2e41;
 }
 
 img {
-  width: 80%;
-  display: block;
-  margin: 0 auto;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
 }
 
 h1 {
@@ -25,34 +25,34 @@ h1 {
 }
 
 main {
-  width: 80%;
-  margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
 form {
-  margin-top: 1.5rem;
-  display: flex;
+    margin-top: 1.5rem;
+    display: flex;
 }
 
 input[type='text'] {
-  width: 70%;
-  padding: 0.4rem;
-  margin-right: 0.5rem;
-  border-radius: 0.3rem;
+    width: 70%;
+    padding: 0.4rem;
+    margin-right: 0.5rem;
+    border-radius: 0.3rem;
 }
 
 .warning {
-  display: none;
-  color: red;
-  font-size: smaller;
-  margin-top: 1rem;
+    display: none;
+    color: red;
+    font-size: smaller;
+    margin-top: 1rem;
 }
 
 .filter-to-do {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 0.3rem;
-  border-radius: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
 }
 
 .todo-container {
@@ -82,7 +82,7 @@ p {
     margin-left: 0.5rem;
 }
 
-.item_checked {
+.item-completed {
     border: 0.1rem solid rgba(116, 220, 84, 255);
     text-decoration: line-through;
 }
@@ -97,28 +97,31 @@ button {
     outline: inherit;
 }
 
+.focusable:focus-visible {
+    outline: rgb(0, 95, 204) auto 1px;
+}
+
 @media only screen and (min-width: 600px) {
+    img {
+        width: 25%;
+        display: block;
+        margin: 0 auto;
+    }
 
-  img {
-    width: 25%;
-    display: block;
-    margin: 0 auto;
-  }
+    main {
+        width: 40%;
+        margin: 0 auto;
+    }
 
-  main {
-    width: 40%;
-    margin: 0 auto;
-  }
+    form {
+        margin-top: 2rem;
+    }
 
-  form {
-    margin-top: 2rem;
-  }
+    .todo-container {
+        margin-top: 1.5rem;
+    }
 
-  .todo-container {
-    margin-top: 1.5rem;
-  }
-
-   p {
+    p {
         font-size: 2.5rem;
     }
 
