@@ -19,10 +19,11 @@ filter.addEventListener('change', filterToDos);
 //Focus on load
 document.addEventListener('DOMContentLoaded', (e) => {
     toDoInput.focus();
+    // Get data from local storage
+    getLocalStorage();
 });
 
 //Functions
-
 function addToDo(e) {
     const toDoDiv = document.createElement('div');
     toDoDiv.classList.add('todo-container');
@@ -59,12 +60,15 @@ function addToDo(e) {
 
         toDoList.appendChild(toDoDiv);
     }
+    // Set local storage
+    setLocalStorage();
 }
 
 function deleteToDo(e) {
     const item = e.target;
     if (item.attributes.type.value === 'delete') {
         item.parentNode.remove();
+        setLocalStorage();
     }
 }
 
@@ -90,5 +94,31 @@ function filterToDos(e) {
                 todo.style.display = 'none';
             }
         }
+    });
+}
+
+function setLocalStorage() {
+    //Create an array to store the li values
+    let toStorage = [];
+
+    let values = document.querySelectorAll('li');
+
+    console.log(values);
+    //Cycle through the li array
+    for (let i = 0; i < values.length; i++) {
+        toStorage.push(values[i].innerHTML);
+    }
+    console.log(toStorage);
+    localStorage.setItem('items', JSON.stringify(toStorage));
+}
+
+function getLocalStorage() {
+    const storedValue = JSON.parse(localStorage.getItem('items'));
+
+    if (!storedValue) return;
+
+    storedValue.forEach(function (el) {
+        toDoInput.value = el;
+        addToDo();
     });
 }
